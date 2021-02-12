@@ -5,12 +5,6 @@ header
     button.navbar-toggler[data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"]
       span.navbar-toggler-icon
     #navbarSupportedContent.collapse.navbar-collapse
-      ul.navbar-nav.ml-auto.main-nav.align-items-center
-        li.nav-item.dropdown.dropdown-slide
-          a.nav-link.dropdown-toggle[href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
-            |  掲示板
-          .dropdown-menu.dropdown-menu-right
-            = link_to '掲示板一覧', '#', class: 'dropdown-item'
-            = link_to '掲示板作成', '#', class: 'dropdown-item'
-        li.nav-item
-          = link_to 'ブックマーク一覧', '#', class: 'nav-link'
+      .navbar-nav.ml-auto.main-nav.align-items-centers
+        = link_to new_post_path
+          |   新規作成

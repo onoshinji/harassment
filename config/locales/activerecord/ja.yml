@@ -1,0 +1,21 @@
+ja:
+   activerecord:
+     models:
+       user: 'ユーザー'
+       post: '掲示板'
+       vote: '投票'
+     attributes:
+       user:
+         email: 'メールアドレス'
+         password: 'パスワード'
+         password_confirmation: 'パスワード確認'
+       post:
+         title: 'タイトル'
+         kind: 'ハラスメント型'
+       vote:
+         guilty: 'ハラスメント'
+         not_guilty: 'ハラスメントでない'
+   attributes:
+     id: 'ID'
+     created_at: '作成日時'
+     updated_at: '更新日時'
