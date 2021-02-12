@@ -9,19 +9,27 @@
             <h4 class="card-title">
               <%= post.title %>
             </h4>
-            <!-- <ul class="list-inline">
-              <li class="list-inline-item">
-                <%# <%= icon 'far', 'calendar' %> %>
-                <%# <%= l post.created_at, format: :long %> %>
+            <ul class="list-inline">
+              <li class="list-inline-item" id="kind_button">
+                <%= "#{post.kind}"%>
               </li>
-            </ul> -->
+              <li class="list-inline-item">
+                <%= "ハラスメント！#{post.guilty}票"%>
+              </li>
+              <li class="list-inline-item">
+                <%= "ちがうかなあ#{post.not_guilty}票" %>
+              </li>
+            </ul>
           </div>
         </div>
         <!-- グラフ部分 -->
         <div class="col-lg-6">
-          <%= image_tag 'user.jpeg', class: 'card-img-top', size: '200x200' %>
+          <% if post.guilty >= 1 or post. not_guilty >= 1%>
+            <%= pie_chart [["ハラスメント",post.guilty],["ちがうかなあ",post.not_guilty]] %>
+          <% else %>
+            <p>まだ投票されていません</p>
+          <% end %>
         </div>
-
       </div>
     </div>
   </div>
