@@ -1,12 +1,12 @@
 <%= form_with model: post, local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
   <div class="form-group">
     <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' %>
+    <%= f.text_field :title, class: 'form-control', placeholder: 'された行動、言動などを書きます' %>
   </div>
   <div class="form-group">
     <%= f.label :kind %>
-    <%= f.text_field :kind, class: 'form-control' %>
+    <%= f.text_field :kind, class: 'form-control', placeholder: '例：パワハラ、セクハラ、モラハラ、マタハラなど' %>
   </div>
-
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>

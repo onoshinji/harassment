@@ -37,6 +37,28 @@ class PostsController < ApplicationController
   def show
   end
 
+  def guilty
+    if params[:post_id].present?
+      @post = Post.find(params[:post_id])
+      @post.guilty += 1
+      @post.save
+      redirect_to posts_path, success: "投稿しました"
+    else
+      render :index
+    end
+  end
+
+  def not_guilty
+    if params[:post_id].present?
+      @post = Post.find(params[:post_id])
+      @post.not_guilty += 1
+      @post.save
+      redirect_to posts_path, success: "投稿しました"
+    else
+      render :index
+    end
+  end
+
   def destroy
     @post.destroy
     redirect_to posts_path, danger: "投稿を削除しました"
