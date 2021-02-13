@@ -1,8 +1,10 @@
-10.times do |index|
+20.times do |index|
   Post.create(
-      title: "タイトル#{index}",
+      title: "テスト#{index}",
       kind: "パワハラ",
-      guilty: 10,
-      not_guilty: 5
+      guilty: 1,
+      not_guilty: 1,
+      little_guilty: 1,
+      little_not_guilty: 1
   )
 end
