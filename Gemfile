@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
+gem 'rails_admin', '~> 2.0.0.beta'
 gem 'kaminari'
 gem 'ransack'
 gem 'chartkick'
