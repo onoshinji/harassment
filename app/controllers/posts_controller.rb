@@ -42,7 +42,7 @@ class PostsController < ApplicationController
       @post = Post.find(params[:post_id])
       @post.guilty += 1
       @post.save
-      redirect_to posts_path, success: "投稿しました"
+      redirect_to posts_path, info: "ハラスメント！に投票!"
     else
       render :index
     end
@@ -53,7 +53,29 @@ class PostsController < ApplicationController
       @post = Post.find(params[:post_id])
       @post.not_guilty += 1
       @post.save
-      redirect_to posts_path, success: "投稿しました"
+      redirect_to posts_path, info: "ちがうに投票！"
+    else
+      render :index
+    end
+  end
+
+  def little_guilty
+    if params[:post_id].present?
+      @post = Post.find(params[:post_id])
+      @post.little_guilty += 1
+      @post.save
+      redirect_to posts_path, info: "多分そうに投票!"
+    else
+      render :index
+    end
+  end
+
+  def little_not_guilty
+    if params[:post_id].present?
+      @post = Post.find(params[:post_id])
+      @post.little_not_guilty += 1
+      @post.save
+      redirect_to posts_path, info: "多分ちがうに投票!"
     else
       render :index
     end
