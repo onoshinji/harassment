@@ -1,12 +1,16 @@
 <% content_for(:title, t('.title')) %>
 
 <div class="container pt-3">
-  <div class="row">
-
-  </div>
   <!-- 掲示板一覧 -->
   <div class="row">
     <div class="col-12">
+      <!-- サーチフォーム -->
+      <div class="row">
+        <div class="col-8 offset-2 mb-3">
+          <%= render 'search_form', url: posts_path, class:'form-inline' %>
+        </div>
+      </div>
+      <!-- サーチフォーム -->
       <div class="row">
         <% if @posts.present? %>
           <%= render @posts %>
@@ -16,4 +20,6 @@
       </div>
     </div>
   </div>
+  <!-- ページネーション -->
+  <%= paginate @posts %>
 </div>

@@ -20,13 +20,13 @@
                 <%= "#{post.guilty}票"%>
               </li>
               <li class="list-inline-item">
-                <%= link_to little_guilty_path(post_id: post.id), class: 'btn btn-warning btn-sm', method: :get do %>
+                <%= link_to little_guilty_path(post_id: post.id), class: 'btn btn-success btn-sm', method: :get do %>
                   たぶんそう
                 <% end %>
                 <%= "#{post.little_guilty}票"%>
               </li>
               <li class="list-inline-item">
-                <%= link_to little_not_guilty_path(post_id: post.id), class: 'btn btn-success btn-sm', method: :get do %>
+                <%= link_to little_not_guilty_path(post_id: post.id), class: 'btn btn-warning btn-sm', method: :get do %>
                   たぶんちがう
                 <% end %>
                 <%= "#{post.little_not_guilty}票"%>
@@ -45,8 +45,8 @@
           <% unless post.guilty == 0 && post.not_guilty == 0 && post.little_guilty == 0 && post.little_not_guilty == 0 %>
             <%= pie_chart [ ["ハラスメント",post.guilty],
                             ["ちがう",post.not_guilty],
-                            ["多分そう",post.little_guilty],
-                            ["多分ちがう",post.little_not_guilty] ]%>
+                            ["多分ちがう",post.little_not_guilty],
+                            ["多分そう",post.little_guilty] ]%>
           <% else %>
             <p>まだ投票されていません</p>
           <% end %>
