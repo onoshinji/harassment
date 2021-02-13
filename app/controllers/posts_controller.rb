@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.all.order(created_at: :desc)
+    @q = Post.ransack(params[:q])
+    @posts = @q.result.order(created_at: :desc).page(params[:page])
   end
 
   def new
@@ -42,7 +43,7 @@ class PostsController < ApplicationController
       @post = Post.find(params[:post_id])
       @post.guilty += 1
       @post.save
-      redirect_to posts_path, success: "投稿しました"
+      redirect_to posts_path, info: "ハラスメント！に投票!"
     else
       render :index
     end
@@ -53,7 +54,29 @@ class PostsController < ApplicationController
       @post = Post.find(params[:post_id])
       @post.not_guilty += 1
       @post.save
-      redirect_to posts_path, success: "投稿しました"
+      redirect_to posts_path, info: "ちがうに投票！"
+    else
+      render :index
+    end
+  end
+
+  def little_guilty
+    if params[:post_id].present?
+      @post = Post.find(params[:post_id])
+      @post.little_guilty += 1
+      @post.save
+      redirect_to posts_path, info: "多分そうに投票!"
+    else
+      render :index
+    end
+  end
+
+  def little_not_guilty
+    if params[:post_id].present?
+      @post = Post.find(params[:post_id])
+      @post.little_not_guilty += 1
+      @post.save
+      redirect_to posts_path, info: "多分ちがうに投票!"
     else
       render :index
     end

@@ -1,10 +1,13 @@
 header
-  nav.navbar.navbar-expand-lg.navigation.navbar-light.base-color
+  nav.navbar.navigation.navbar-light.base-color
     = link_to root_path, class: 'navbar-brand' do
       |  これってハラスメント？
-    button.navbar-toggler[data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"]
-      span.navbar-toggler-icon
-    #navbarSupportedContent.collapse.navbar-collapse
-      .navbar-nav.ml-auto.main-nav.align-items-centers
-        = link_to new_post_path
-          |   新規作成
+    #navbarSupportedContent
+      .navbar
+        ul.navbar-nav.mr-auto
+            li.nav-item
+              = link_to new_post_path
+                |   新規作成
+            li.nav-item
+              <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large"  data-text="これってハラスメント？みんなでハラスメントか投票しよう！"data-show-count="false">Tweet</a>
+              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

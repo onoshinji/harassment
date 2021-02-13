@@ -9,7 +9,7 @@
             <li class="list-inline-item" id="kind_button">
               <%= "#{post.kind}"%>
             </li>
-            <h4 class="card-title base-light-color">
+            <h4 class="card-text base-light-color">
               <%= post.title %>
             </h4>
             <ul class="list-inline">
@@ -20,8 +20,20 @@
                 <%= "#{post.guilty}票"%>
               </li>
               <li class="list-inline-item">
+                <%= link_to little_guilty_path(post_id: post.id), class: 'btn btn-success btn-sm', method: :get do %>
+                  たぶんそう
+                <% end %>
+                <%= "#{post.little_guilty}票"%>
+              </li>
+              <li class="list-inline-item">
+                <%= link_to little_not_guilty_path(post_id: post.id), class: 'btn btn-warning btn-sm', method: :get do %>
+                  たぶんちがう
+                <% end %>
+                <%= "#{post.little_not_guilty}票"%>
+              </li>
+              <li class="list-inline-item">
                 <%= link_to not_guilty_path(post_id: post.id), class: 'btn btn-danger btn-sm', method: :get do %>
-                  ちがうかな
+                  ちがう
                 <% end %>
                 <%= "#{post.not_guilty}票"%>
               </li>
@@ -30,8 +42,11 @@
         </div>
         <!-- グラフ部分 -->
         <div class="col-lg-6">
-          <% if post.guilty >= 1 or post. not_guilty >= 1%>
-            <%= pie_chart [["ハラスメント",post.guilty],["ちがうかなあ",post.not_guilty]] %>
+          <% unless post.guilty == 0 && post.not_guilty == 0 && post.little_guilty == 0 && post.little_not_guilty == 0 %>
+            <%= pie_chart [ ["ハラスメント",post.guilty],
+                            ["ちがう",post.not_guilty],
+                            ["多分ちがう",post.little_not_guilty],
+                            ["多分そう",post.little_guilty] ]%>
           <% else %>
             <p>まだ投票されていません</p>
           <% end %>
