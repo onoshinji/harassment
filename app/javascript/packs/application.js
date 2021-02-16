@@ -19,4 +19,5 @@ require("channels")
 
 require("chartkick") // 追記
 require("chart.js") // 追記
+require('jquery')
 require("turbolinks").start()
