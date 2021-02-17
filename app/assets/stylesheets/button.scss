@@ -1,0 +1,93 @@
+style.css
+/* 通常のボタン色 */
+.btn-pink,
+.btn-pink.disabled, .btn-pink:disabled {
+ color: #fff;
+ background-color: #ff8484;
+ border-color: #ff8484;
+}
+
+/* focusされた時の枠線の色 */
+.btn-pink:focus, .btn-pink.focus,
+.btn-pink:not(:disabled):not(.disabled):active:focus, .btn-pink:not(:disabled):not(.disabled).active:focus,
+.show > .btn-pink.dropdown-toggle:focus {
+ box-shadow: 0 0 0 0.2rem rgba(50, 50, 50, 0.5);
+}
+
+/* hover時（マウスカーソルを重ねた時）の色（通常より濃いor暗めの色を指定） */
+.btn-pink:hover {
+ color: #fff;
+ background-color: #ff8484;
+ border-color: #ff8484;
+}
+
+/* active時の色（hover時と同等かさらに濃いor暗めの色を指定） */
+.btn-pink:not(:disabled):not(.disabled):active, .btn-pink:not(:disabled):not(.disabled).active,
+.show > .btn-pink.dropdown-toggle {
+ color: #fff;
+ background-color: #ff8484;
+ border-color: #ff8484;
+}
+
+.btn-orange,
+.btn-orange.disabled, .btn-orange:disabled {
+  color: #fff;
+  background-color: #ffc184;
+  border-color: #ffc184;
+}
+
+/* focusされた時の枠線の色 */
+.btn-orange:focus, .btn-orange.focus,
+.btn-orange:not(:disabled):not(.disabled):active:focus, .btn-orange:not(:disabled):not(.disabled).active:focus,
+.show > .btn-orange.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(50, 50, 50, 0.5);
+}
+
+/* hover時（マウスカーソルを重ねた時）の色（通常より濃いor暗めの色を指定） */
+.btn-orange:hover {
+  color: #fff;
+  background-color: #ffc184;
+  border-color: #ffc184;
+}
+
+.btn-light-blue,
+.btn-light-blue.disabled, .btn-light-blue:disabled {
+  color: #fff;
+  background-color: #84c1ff;
+  border-color: #84c1ff;
+}
+
+/* focusされた時の枠線の色 */
+.btn-light-blue:focus, .btn-light-blue.focus,
+.btn-light-blue:not(:disabled):not(.disabled):active:focus, .btn-light-blue:not(:disabled):not(.disabled).active:focus,
+.show > .btn-light-blue.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(50, 50, 50, 0.5);
+}
+
+/* hover時（マウスカーソルを重ねた時）の色（通常より濃いor暗めの色を指定） */
+.btn-light-blue:hover {
+  color: #fff;
+  background-color: #84c1ff;
+  border-color: #84c1ff;
+}
+
+.btn-light-green,
+.btn-light-green.disabled, .btn-light-green:disabled {
+  color: #fff;
+  background-color: #84ffc1;
+  border-color: #84ffc1;
+}
+
+/* focusされた時の枠線の色 */
+.btn-light-green:focus, .btn-light-green.focus,
+.btn-light-green:not(:disabled):not(.disabled):active:focus, .btn-light-green:not(:disabled):not(.disabled).active:focus,
+.show > .btn-light-green.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(50, 50, 50, 0.5);
+}
+
+/* hover時（マウスカーソルを重ねた時）の色（通常より濃いor暗めの色を指定） */
+.btn-light-green:hover {
+  color: #fff;
+  background-color: #84ffc1;
+  border-color: #84ffc1;
+}

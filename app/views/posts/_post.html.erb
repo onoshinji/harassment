@@ -14,25 +14,25 @@
             </h4>
             <ul class="list-inline">
               <li class="list-inline-item">
-                <%= link_to guilty_path(post_id: post.id), class: 'btn btn-primary btn-sm', method: :get do %>
+                <%= link_to guilty_path(post_id: post.id), class: 'btn btn-light-blue btn-sm', method: :get do %>
                   ハラスメント！
                 <% end %>
                 <%= "#{post.guilty}票"%>
               </li>
               <li class="list-inline-item">
-                <%= link_to little_guilty_path(post_id: post.id), class: 'btn btn-success btn-sm', method: :get do %>
+                <%= link_to little_guilty_path(post_id: post.id), class: 'btn btn-light-green btn-sm', method: :get do %>
                   たぶんそう
                 <% end %>
                 <%= "#{post.little_guilty}票"%>
               </li>
               <li class="list-inline-item">
-                <%= link_to little_not_guilty_path(post_id: post.id), class: 'btn btn-warning btn-sm', method: :get do %>
+                <%= link_to little_not_guilty_path(post_id: post.id), class: 'btn btn-orange btn-sm', method: :get do %>
                   たぶんちがう
                 <% end %>
                 <%= "#{post.little_not_guilty}票"%>
               </li>
               <li class="list-inline-item">
-                <%= link_to not_guilty_path(post_id: post.id), class: 'btn btn-danger btn-sm', method: :get do %>
+                <%= link_to not_guilty_path(post_id: post.id), class: 'btn btn-pink btn-sm', method: :get do %>
                   ちがう
                 <% end %>
                 <%= "#{post.not_guilty}票"%>
